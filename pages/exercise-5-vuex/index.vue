@@ -10,6 +10,7 @@
 
 import { hustonText } from './hustonText';
 import setHustonText from '~/mixins/setHustonText';
+import setHustonImage from '~/mixins/setHustonImage';
 import callingHuston from '~/mixins/callingHuston';
 import backButton from '~/mixins/backButton';
 
@@ -22,10 +23,11 @@ export default {
     },
     data() {
         return {
-            hustonHtml: hustonText
+            hustonHtml: hustonText,
+            hustonImage: '5-Kase.O.jpg',
         };
     },
-    mixins: [ setHustonText, callingHuston, backButton ],
+    mixins: [ setHustonText, setHustonImage, callingHuston, backButton ],
 };
 </script>
 

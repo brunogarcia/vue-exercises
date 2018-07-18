@@ -23,7 +23,7 @@
                                 <div class="headline primary--text">{{ post.title }}</div>
                             </v-card-title>
                             <v-card-text>
-                                <!-- 🚀 Insert it here ⬇ -->
+                                <p class="body-1">{{post.extract}}</p>
                             </v-card-text>
                         </v-card>
                     </v-flex>
@@ -35,10 +35,9 @@
 
 <script>
 import backButton from '~/mixins/backButton';
-
 import { hustonText } from './hustonText';
-
 import setHustonText from '~/mixins/setHustonText';
+import setHustonImage from '~/mixins/setHustonImage';
 import callingHuston from '~/mixins/callingHuston';
 
 export default {
@@ -51,7 +50,8 @@ export default {
     data() {
         return {
             posts: [],
-            hustonHtml: hustonText
+            hustonHtml: hustonText,
+            hustonImage: '2-Dorothy-Vaughan.jpg'
         };
     },
     asyncData({ app }) {
@@ -59,7 +59,7 @@ export default {
             return { posts: data };
         });
     },
-    mixins: [ setHustonText, callingHuston, backButton ],
+    mixins: [ setHustonText, setHustonImage, callingHuston, backButton ],
 };
 </script>
 

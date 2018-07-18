@@ -2,14 +2,17 @@
     <section class="container">
         <back-button></back-button>
         <div v-html="hustonHtml"></div>
-        <!-- 🚀 Add the button components -->
+        <counter-button />
+        <counter-button />
     </section>
 </template>
 
 <script>
 
 import { hustonText } from './hustonText';
+import CounterButton from '~/components/CounterButton';
 import setHustonText from '~/mixins/setHustonText';
+import setHustonImage from '~/mixins/setHustonImage';
 import callingHuston from '~/mixins/callingHuston';
 import backButton from '~/mixins/backButton';
 
@@ -22,10 +25,14 @@ export default {
     },
     data() {
         return {
-            hustonHtml: hustonText
+            hustonHtml: hustonText,
+            hustonImage: '4-Mary-Jackson.jpg'
         };
     },
-    mixins: [ setHustonText, callingHuston, backButton ],
+    mixins: [ setHustonText, setHustonImage, callingHuston, backButton ],
+    components: {
+        CounterButton
+    }
 };
 </script>
 

@@ -3,7 +3,7 @@
         <v-card class="transparent elevation-0 pt-3">
              <v-card-media
                 contain
-                :src="$store.state.hustonTopImage"
+                :src="hustonImage"
                 height="200px"
              ></v-card-media>
             <v-card-text class="mt-2">
@@ -25,7 +25,7 @@ import { mapGetters } from 'vuex';
 
 export default {
     computed: {
-        ...mapGetters(['hustonText'])
+        ...mapGetters(['hustonText', 'hustonImage'])
     },
     components: {
         DontShowAgain: () => import('~/components/DontShowAgain')

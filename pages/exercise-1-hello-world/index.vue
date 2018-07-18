@@ -14,12 +14,12 @@
 
             <!-- 🚀 Uncomment the code below ⬇ -->
 
-            <!-- <span>If you have this in a second screen, you will see how fast the</span>
+            <span>If you have this in a second screen, you will see how fast the</span>
             &nbsp;<a href="https://nuxtjs.org/guide#features" target="blank" rel="noopener noreferer">HMR</a>&nbsp;
             <span>works!</span>
             <p class="about-coding-style"> Another thing: I have respected 120 chars per line.
                 You can add the rule in your editor too 😋.</p>
-            <p><v-icon class="translucent success--text headline">check</v-icon></p> -->
+            <p><v-icon class="translucent success--text headline">check</v-icon></p>
 
 
         </div>
@@ -28,9 +28,9 @@
 
 <script>
 import backButton from '~/mixins/backButton';
-
 import { hustonText } from './hustonText';
 import setHustonText from '~/mixins/setHustonText';
+import setHustonImage from '~/mixins/setHustonImage';
 import callingHuston from '~/mixins/callingHuston';
 
 export default {
@@ -50,10 +50,11 @@ export default {
     data() {
         return {
             title: 'Hello, ...world?',
-            hustonHtml: hustonText
+            hustonHtml: hustonText,
+            hustonImage: '1-Christine-Darden.jpg',
         };
     },
-    mixins: [ setHustonText, callingHuston, backButton ],
+    mixins: [ setHustonText, setHustonImage, callingHuston, backButton ],
     components: {
         TheSatelite: () => import('~/components/Satelite.vue'),
     }

@@ -13,6 +13,9 @@ const store = () => {
             hustonText(state) {
                 return state.missionText;
             },
+            hustonImage(state) {
+                return state.hustonTopImage;
+            },
             hustonOpen(state) {
                 return state.hustonOpen;
             },
@@ -23,6 +26,9 @@ const store = () => {
         mutations: {
             SET_HUSTON_TEXT(state, text) {
                 state.missionText = text;
+            },
+            SET_HUSTON_IMAGE(state, image) {
+                state.hustonTopImage = image;
             },
             CALL_TO_HUSTON(state, val) {
                 state.hustonOpen = !!val;
@@ -39,6 +45,10 @@ const store = () => {
         actions: {
             updateHustonText({ commit }, text) {
                 commit('SET_HUSTON_TEXT', text);
+            },
+            updateHustonImage({ commit }, name) {
+                const path = `/images/nasa/${name}`;
+                commit('SET_HUSTON_IMAGE', path);
             },
             callToHuston({ commit }, val) {
                 commit('CALL_TO_HUSTON', val);
